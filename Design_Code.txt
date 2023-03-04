@@ -1,0 +1,23 @@
+module voltage_level_shifter(input in,VDD, output out);
+ wire mid, mid_p, mid_n;
+ // Cross-coupled pull-up network
+ nmos n1(mid, mid_p, 0);
+ nmos n2(mid_p, mid, 0);
+ nmos n3(mid, mid_n, 0);
+ nmos n4(mid_n, mid, 0);
+ // Regulated pull-up network
+ nmos n5(mid, out, 0);
+ pmos p1(mid_p, VDD, 0);
+ pmos p2(mid_n, VDD, 0);
+ // Control logic
+ always @ (in) begin
+ if (in == 1'b1) begin
+ p1.gate = 1;
+ p2.gate = 0;
+ end
+ else begin
+ p1.gate = 0;
+ p2.gate = 1;
+ end
+ end
+endmodule
