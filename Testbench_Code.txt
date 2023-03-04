@@ -1,0 +1,35 @@
+module voltage_level_shifter();
+ // Define test inputs
+ logic in;
+ // Define test outputs
+ logic out;
+ // Instantiate the voltage level shifter
+ voltage_level_shifter vls(in, out);
+ // Generate clock signal for timing purposes
+ reg clk = 0;
+always #5 clk = ~clk;
+ // Define test cases
+ initial begin
+ // Test case 1: in = 0, expected output = 0
+ in = 0;
+ #10 $display("Test case 1: in = %b, out = %b (expected: 0)", in, out);
+ // Test case 2: in = 1, expected output = 1
+ in = 1;
+ #10 $display("Test case 2: in = %b, out = %b (expected: 1)", in, out);
+ // Test case 3: in = 0, expected output = 0
+ in = 0;
+ #10 $display("Test case 3: in = %b, out = %b (expected: 0)", in, out);
+ // Test case 4: in = 1, expected output = 1
+ in = 1;
+ #10 $display("Test case 4: in = %b, out = %b (expected: 1)", in, out);
+ // Test case 5: in = 0, expected output = 0
+ in = 0;
+ #10 $display("Test case 5: in = %b, out = %b (expected: 0)", in, out);
+ // Test case 6: in = 1, expected output = 1
+ in = 1;
+ #10 $display("Test case 6: in = %b, out = %b (expected: 1)", in, out);
+ $finish;
+ end
+ // Drive the input signal with the clock
+ always #2 in <= clk;
+endmodule
