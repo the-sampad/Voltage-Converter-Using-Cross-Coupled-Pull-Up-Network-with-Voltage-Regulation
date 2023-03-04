@@ -1,1 +1,1 @@
-# Rapid-Low-power-Voltage-level-shifter-Utilizing-Regulated-Cross-Coupled-Pull-Up-Network
+# Voltage Converter Using Cross‑Coupled Pull‑Up Network with Voltage Regulation
