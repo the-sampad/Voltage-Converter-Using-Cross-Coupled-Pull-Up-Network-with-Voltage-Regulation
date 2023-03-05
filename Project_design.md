@@ -3,7 +3,7 @@ The voltage level shifter will be designed using a regulated cross-coupled pull 
 network. The design will consist of a cross-coupled pull-up network and a regulated 
 pull-up network.
 
-<h3>The overall design of the voltage level shifter is shown in the "Design_Code" file.</h3>
+<h3>The overall design idea of the voltage level shifter is shown in the "Design_Code_Idea" file.</h3>
 This code defines a module voltage_level_shifter that takes an input signal in and 
 outputs a signal out. The voltage level shifter consists of a cross-coupled pull-up 
 network and a regulated pull-up network.
